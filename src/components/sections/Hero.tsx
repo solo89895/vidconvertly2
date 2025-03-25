@@ -54,20 +54,22 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-brand-100 to-brand-50">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-hero-pattern opacity-60"></div>
+    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMkM1NUUiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzBoLTZWMGg2djMwem0tNiAwaC02VjBoNnYzMHptLTYgMGgtNlYwaDZ2MzB6bS02IDBoLTZWMGg2djMwem0tNiAwSDB2LTZoNnY2em0wLTZIMHYtNmg2djZ6bTAtNkgwdi02aDZ2NnptMC02SDB2LTZoNnY2em0wLTZIMFYwaDB2NnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+      </div>
       
       {/* Content */}
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
-          <div className="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-6 animate-pulse">
+          <div className="inline-block bg-brand-600 text-black px-3 py-1 rounded-full text-sm font-medium mb-6 animate-pulse">
             Fast, Free & Simple
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-            Convert Videos with <span className="text-brand-600">Elegance</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight">
+            Convert Videos with <span className="text-gradient font-bold">Elegance</span>
           </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Download and convert videos from YouTube, Facebook, Instagram, Twitter, and TikTok in seconds. No signup required.
           </p>
           
@@ -81,11 +83,11 @@ const Hero = () => {
           <UrlInput onSubmit={handleUrlSubmit} />
         </div>
         
-        {/* Floating Cards Animation (Decorative) */}
+        {/* Floating Elements Animation (Decorative) */}
         <div className="hidden md:block">
-          <div className="absolute top-40 -right-16 w-32 h-32 bg-white/80 rounded-xl shadow-xl backdrop-blur-sm rotate-12 animate-float opacity-70"></div>
-          <div className="absolute bottom-20 -left-8 w-24 h-24 bg-white/80 rounded-xl shadow-lg backdrop-blur-sm -rotate-12 animate-float opacity-70 animation-delay-1000"></div>
-          <div className="absolute top-20 left-10 w-20 h-20 bg-brand-500/20 rounded-xl shadow-lg backdrop-blur-sm rotate-45 animate-bounce opacity-80"></div>
+          <div className="absolute top-40 -right-16 w-32 h-32 glassmorphism rounded-xl rotate-12 animate-float opacity-30"></div>
+          <div className="absolute bottom-20 -left-8 w-24 h-24 glassmorphism rounded-xl -rotate-12 animate-float opacity-30 animation-delay-1000"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 bg-brand-500/10 rounded-xl rotate-45 animate-bounce opacity-40"></div>
         </div>
       </div>
     </section>

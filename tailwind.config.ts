@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -129,6 +130,10 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 5px rgba(34, 197, 94, 0.5)" },
+          "50%": { boxShadow: "0 0 20px rgba(34, 197, 94, 0.8)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -143,10 +148,16 @@ export default {
         "float": "float 3s ease-in-out infinite",
         "bounce": "bounce 2s ease-in-out infinite",
         "pulse": "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "glow": "glow 2s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-pattern": "linear-gradient(to right bottom, #f0fdf4, #dcfce7, #bbf7d0)",
+        "hero-pattern": "linear-gradient(to right bottom, #111111, #1a1a1a, #222222)",
+        "glass-gradient": "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0))",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
     },
   },

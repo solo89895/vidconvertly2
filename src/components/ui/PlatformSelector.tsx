@@ -30,11 +30,11 @@ const PlatformSelector = ({
           className={cn(
             "flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 transform hover:scale-105",
             selectedPlatform === platform.id
-              ? "border-brand-500 bg-brand-100 text-brand-700 shadow-md"
-              : "border-gray-200 bg-white text-gray-600 hover:border-brand-300 hover:bg-brand-50/50"
+              ? "border-brand-500 bg-brand-500/20 text-brand-400 neon-glow"
+              : "border-gray-700 bg-gray-800/50 text-gray-400 hover:border-brand-500/50 hover:bg-gray-800"
           )}
         >
-          <span className="text-brand-600">{platform.icon}</span>
+          <span className="text-brand-400">{platform.icon}</span>
           <span className="font-medium text-sm">{platform.name}</span>
         </button>
       ))}
