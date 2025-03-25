@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import UrlInput from "@/components/ui/UrlInput";
 import PlatformSelector from "@/components/ui/PlatformSelector";
-import { Youtube, Facebook, Instagram, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
+import { Youtube, Facebook, Instagram, Twitter, Download, ArrowDown } from "lucide-react";
 
 const platforms = [
   {
@@ -53,43 +54,134 @@ const Hero = () => {
     console.log("Processing URL:", url, "for platform:", selectedPlatform);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+    <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMkM1NUUiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzBoLTZWMGg2djMwem0tNiAwaC02VjBoNnYzMHptLTYgMGgtNlYwaDZ2MzB6bS02IDBoLTZWMGg2djMwem0tNiAwSDB2LTZoNnY2em0wLTZIMHYtNmg2djZ6bTAtNkgwdi02aDZ2NnptMC02SDB2LTZoNnY2em0wLTZIMFYwaDB2NnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-5"></div>
       </div>
       
       {/* Content */}
-      <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
-          <div className="inline-block bg-brand-600 text-black px-3 py-1 rounded-full text-sm font-medium mb-6 animate-pulse">
-            Fast, Free & Simple
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 tracking-tight">
-            Convert Videos with <span className="text-gradient font-bold">Elegance</span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+      <motion.div 
+        className="container relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-12"
+          variants={itemVariants}
+        >
+          <motion.div 
+            className="flex items-center justify-center mb-8"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-full blur-md"></div>
+              <div className="relative flex items-center bg-black px-5 py-3 rounded-full border border-brand-500/30">
+                <Download className="w-7 h-7 text-brand-400 mr-2" />
+                <span className="text-2xl font-bold">
+                  <span className="text-brand-400">Fast</span> 
+                  <span className="text-white">Download</span> 
+                  <span className="text-brand-400">LK</span>
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <div className="inline-block bg-brand-600/80 text-black px-3 py-1 rounded-full text-sm font-bold mb-6 animate-pulse">
+              Fast, Free & Simple
+            </div>
+          </motion.div>
+          
+          <motion.h1 
+            className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            variants={itemVariants}
+          >
+            Convert Videos with <span className="text-gradient font-extrabold text-glow">Elegance</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
+            variants={itemVariants}
+          >
             Download and convert videos from YouTube, Facebook, Instagram, Twitter, and TikTok in seconds. No signup required.
-          </p>
+          </motion.p>
           
-          <PlatformSelector
-            platforms={platforms}
-            selectedPlatform={selectedPlatform}
-            onSelect={setSelectedPlatform}
-            className="mb-8"
-          />
+          <motion.div variants={itemVariants}>
+            <PlatformSelector
+              platforms={platforms}
+              selectedPlatform={selectedPlatform}
+              onSelect={setSelectedPlatform}
+              className="mb-8"
+            />
+          </motion.div>
           
-          <UrlInput onSubmit={handleUrlSubmit} />
-        </div>
+          <motion.div variants={itemVariants}>
+            <UrlInput onSubmit={handleUrlSubmit} />
+          </motion.div>
+
+          <motion.div 
+            className="mt-16 flex justify-center"
+            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <motion.div 
+              className="animate-bounce cursor-pointer"
+              onClick={() => {
+                document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <ArrowDown className="w-8 h-8 text-brand-400" />
+            </motion.div>
+          </motion.div>
+        </motion.div>
         
-        {/* Floating Elements Animation (Decorative) */}
+        {/* Floating Elements Animation */}
         <div className="hidden md:block">
-          <div className="absolute top-40 -right-16 w-32 h-32 glassmorphism rounded-xl rotate-12 animate-float opacity-30"></div>
-          <div className="absolute bottom-20 -left-8 w-24 h-24 glassmorphism rounded-xl -rotate-12 animate-float opacity-30 animation-delay-1000"></div>
-          <div className="absolute top-20 left-10 w-20 h-20 bg-brand-500/10 rounded-xl rotate-45 animate-bounce opacity-40"></div>
+          <motion.div 
+            className="absolute top-40 -right-16 w-32 h-32 glassmorphism rounded-xl float float-delay-1"
+            initial={{ opacity: 0, rotate: 12 }}
+            animate={{ opacity: 0.4, rotate: 12 }}
+            transition={{ duration: 1 }}
+          ></motion.div>
+          <motion.div 
+            className="absolute bottom-20 -left-8 w-24 h-24 glassmorphism rounded-xl float float-delay-2"
+            initial={{ opacity: 0, rotate: -12 }}
+            animate={{ opacity: 0.4, rotate: -12 }}
+            transition={{ duration: 1 }}
+          ></motion.div>
+          <motion.div 
+            className="absolute top-20 left-10 w-20 h-20 bg-brand-500/20 rounded-xl float"
+            initial={{ opacity: 0, rotate: 45 }}
+            animate={{ opacity: 0.5, rotate: 45 }}
+            transition={{ duration: 1 }}
+          ></motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
