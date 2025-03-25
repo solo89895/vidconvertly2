@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,16 +63,16 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         brand: {
-          50: "#e0f2fe",
-          100: "#bae6fd",
-          200: "#93c5fd",
-          300: "#60a5fa",
-          400: "#3b82f6",
-          500: "#2563eb",
-          600: "#1d4ed8",
-          700: "#1e40af",
-          800: "#1e3a8a",
-          900: "#0f172a",
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#22c55e",
+          600: "#16a34a",
+          700: "#15803d",
+          800: "#166534",
+          900: "#14532d",
         },
       },
       borderRadius: {
@@ -118,9 +117,17 @@ export default {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
-        pulse: {
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pulse": {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+          "50%": { opacity: "0.7" },
+        },
+        "bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
         },
       },
       animation: {
@@ -133,11 +140,13 @@ export default {
         "slide-up": "slide-up 0.3s ease-out",
         "slide-down": "slide-down 0.3s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
-        pulse: "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 3s ease-in-out infinite",
+        "bounce": "bounce 2s ease-in-out infinite",
+        "pulse": "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-pattern": "linear-gradient(to right bottom, #e0f2fe, #bae6fd, #93c5fd)",
+        "hero-pattern": "linear-gradient(to right bottom, #f0fdf4, #dcfce7, #bbf7d0)",
       },
     },
   },

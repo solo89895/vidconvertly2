@@ -28,13 +28,13 @@ const PlatformSelector = ({
           key={platform.id}
           onClick={() => onSelect(platform.id)}
           className={cn(
-            "flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200",
+            "flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 transform hover:scale-105",
             selectedPlatform === platform.id
-              ? "border-brand-400 bg-brand-50 text-brand-700"
-              : "border-brand-200 bg-white text-brand-600 hover:border-brand-300 hover:bg-brand-50/50"
+              ? "border-brand-500 bg-brand-100 text-brand-700 shadow-md"
+              : "border-gray-200 bg-white text-gray-600 hover:border-brand-300 hover:bg-brand-50/50"
           )}
         >
-          {platform.icon}
+          <span className="text-brand-600">{platform.icon}</span>
           <span className="font-medium text-sm">{platform.name}</span>
         </button>
       ))}

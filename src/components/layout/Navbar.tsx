@@ -27,9 +27,9 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
-          <span className="text-brand-900 font-semibold text-xl flex items-center">
+          <span className="text-gray-900 font-semibold text-xl flex items-center">
             <Download className="w-5 h-5 text-brand-500 mr-1" />
-            vidconvertly
+            <span className="text-brand-600">vid</span>convertly
           </span>
         </a>
 
@@ -37,19 +37,19 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#features"
-            className="text-brand-900/80 hover:text-brand-900 text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-brand-600 text-sm font-medium transition-colors"
           >
             Features
           </a>
           <a
             href="#how-it-works"
-            className="text-brand-900/80 hover:text-brand-900 text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-brand-600 text-sm font-medium transition-colors"
           >
             How It Works
           </a>
           <a
             href="#disclaimer"
-            className="text-brand-900/80 hover:text-brand-900 text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-brand-600 text-sm font-medium transition-colors"
           >
             Legal
           </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-brand-900 hover:text-brand-700 transition-colors"
+          className="md:hidden text-gray-900 hover:text-brand-600 transition-colors"
         >
           {isMobileMenuOpen ? (
             <X className="w-6 h-6" />
@@ -79,21 +79,21 @@ const Navbar = () => {
           <a
             href="#features"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-brand-900 text-lg font-medium py-2 border-b border-brand-100"
+            className="text-gray-900 text-lg font-medium py-2 border-b border-gray-100"
           >
             Features
           </a>
           <a
             href="#how-it-works"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-brand-900 text-lg font-medium py-2 border-b border-brand-100"
+            className="text-gray-900 text-lg font-medium py-2 border-b border-gray-100"
           >
             How It Works
           </a>
           <a
             href="#disclaimer"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-brand-900 text-lg font-medium py-2 border-b border-brand-100"
+            className="text-gray-900 text-lg font-medium py-2 border-b border-gray-100"
           >
             Legal
           </a>
