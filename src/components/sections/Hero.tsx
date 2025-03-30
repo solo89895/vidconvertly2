@@ -1,9 +1,9 @@
-
 import React, { useState } from "react";
 import UrlInput from "@/components/ui/UrlInput";
 import PlatformSelector from "@/components/ui/PlatformSelector";
 import { motion } from "framer-motion";
-import { Youtube, Facebook, Instagram, Twitter, Download, ArrowDown } from "lucide-react";
+import { Youtube, Facebook, Instagram, Download, ArrowDown } from "lucide-react";
+import { FaPinterest } from "react-icons/fa";
 
 const platforms = [
   {
@@ -22,9 +22,9 @@ const platforms = [
     icon: <Instagram className="w-4 h-4" />,
   },
   {
-    id: "twitter",
-    name: "Twitter",
-    icon: <Twitter className="w-4 h-4" />,
+    id: "pinterest",
+    name: "Pinterest",
+    icon: <FaPinterest className="w-4 h-4" />,
   },
   {
     id: "tiktok",
@@ -126,7 +126,7 @@ const Hero = () => {
             className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Download and convert videos from YouTube, Facebook, Instagram, Twitter, and TikTok in seconds. No signup required.
+            Download and convert videos from YouTube, Facebook, Instagram, Pinterest, and TikTok in seconds. No signup required.
           </motion.p>
           
           <motion.div variants={itemVariants}>

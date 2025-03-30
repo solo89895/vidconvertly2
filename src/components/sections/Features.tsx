@@ -1,4 +1,3 @@
-
 import React from "react";
 import FeatureCard from "@/components/ui/FeatureCard";
 import { Download, Sliders, Clock, Zap, Shield, Music } from "lucide-react";
@@ -8,7 +7,7 @@ const features = [
   {
     icon: <Download className="w-6 h-6" />,
     title: "Multiple Platforms",
-    description: "Download videos from YouTube, Facebook, Instagram, and Twitter with a single tool."
+    description: "Download videos from YouTube, Facebook, Instagram, Pinterest, and TikTok with a single tool."
   },
   {
     icon: <Sliders className="w-6 h-6" />,
