@@ -149,13 +149,13 @@ def progress_hook(d):
 
 app = FastAPI()
 
-# Configure CORS
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["*"],  # Allow all origins in development
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 def get_platform(url: str) -> str:
@@ -1147,9 +1147,10 @@ async def download_tiktok_video(request: VideoDownloadRequest):
 
 if __name__ == "__main__":
     import uvicorn
+    port = int(os.environ.get("PORT", 8080))
     uvicorn.run(
         "main:app",
-        host="127.0.0.1",
-        port=8080,
-        reload=True
+        host="0.0.0.0",
+        port=port,
+        reload=False
     ) 

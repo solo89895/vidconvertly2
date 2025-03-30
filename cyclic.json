@@ -1,0 +1,7 @@
+{
+  "appName": "vidconvertly-backend",
+  "buildCommand": "cd backend && pip install -r requirements.txt",
+  "startCommand": "cd backend && python main.py",
+  "framework": "python",
+  "runtime": "python3.8"
+} 
