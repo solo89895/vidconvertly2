@@ -1,0 +1,17 @@
+{
+  "watch": {
+    "install": {
+      "include": [
+        "^package\\.json$",
+        "^\\.env$"
+      ]
+    },
+    "restart": {
+      "include": [
+        "^main\\.py$",
+        "^requirements\\.txt$"
+      ]
+    },
+    "throttle": 1000
+  }
+} 
